@@ -3,13 +3,33 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
 import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
+import data_img from "../assets/images/data_img.webp";
 ---
-<MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+
+<MainLayout title="Artikel Titel">
+    <article class="max-w-4xl mx-auto p-6 bg-white shadow-md border-b-4 border-red-600">
+        <h1 class="text-4xl font-extrabold text-gray-900 leading-tight mb-4">En spændende artikel om lønforskel i Nordsjælland</h1>
+        
+        <div class="mb-6">
+            <Image src={data_img} alt="data" class="w-full rounded-lg shadow-md" />
+        </div>
+        
+        <p class="text-lg text-gray-800 leading-relaxed mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+
+        <p class="text-lg text-gray-800 leading-relaxed mb-4">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <p class="text-lg text-gray-800 leading-relaxed mb-6">
+            For mere information, besøg <Link href="https://www.kea.dk" target="_blank" class="text-red-600 font-semibold hover:underline">KEA's hjemmeside</Link>.
+        </p>
+
+        <div class="flex justify-start border-t pt-4">
+            <Button class="px-6 py-2 bg-red-600 text-white font-semibold rounded shadow-md hover:bg-red-700">Læs mere</Button>
+        </div>
+    </article>
 </MainLayout>
